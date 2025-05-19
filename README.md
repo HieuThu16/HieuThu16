@@ -1,1 +1,3 @@
-⚡ Fun fact: Riot is my dream. 
+📝 Notion: My Notion Page
+🐙 GitHub: My GitHub Repository
+📺 YouTube: My YouTube Channel
