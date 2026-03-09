@@ -1,4 +1,4 @@
-const repoName = "HieuThu16";
+const repoName = "Portfolio";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -39,9 +39,7 @@ export default function HomePage() {
       <section className="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <MotionReveal className="section-shell rounded-[2rem] p-6 md:p-8">
           <p className="eyebrow">About</p>
-          <h2 className="section-title mt-4">
-            Professional overview.
-          </h2>
+          <h2 className="section-title mt-4">Professional overview.</h2>
           <p className="section-copy mt-4 text-sm md:text-base">
             A compact summary of what I build, how I work, and what someone can
             verify immediately from this portfolio.
@@ -58,7 +56,9 @@ export default function HomePage() {
                 key={item.title}
                 className="panel-soft rounded-[1.5rem] px-5 py-5"
               >
-                <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                <p className="text-sm font-semibold text-foreground">
+                  {item.title}
+                </p>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   {item.body}
                 </p>
@@ -73,9 +73,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">Skills</p>
-              <h2 className="section-title mt-4">
-                Core stack.
-              </h2>
+              <h2 className="section-title mt-4">Core stack.</h2>
             </div>
             <p className="section-copy text-sm md:text-base">
               Focused on the tools that show up repeatedly in shipped work and
@@ -102,12 +100,10 @@ export default function HomePage() {
           <MotionReveal>
             <div>
               <p className="eyebrow">Projects</p>
-              <h2 className="section-title mt-4">
-                Published work.
-              </h2>
+              <h2 className="section-title mt-4">Published work.</h2>
               <p className="section-copy mt-4 text-sm md:text-base">
-                Each project card keeps the deploy link and repository visible so
-                the work can be reviewed without extra navigation.
+                Each project card keeps the deploy link and repository visible
+                so the work can be reviewed without extra navigation.
               </p>
             </div>
           </MotionReveal>

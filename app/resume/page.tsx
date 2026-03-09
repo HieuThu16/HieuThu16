@@ -11,9 +11,7 @@ export default function ResumePage() {
     <div className="container-shell py-10 md:py-16">
       <MotionReveal className="mb-8 section-shell rounded-[2rem] p-6 md:p-8">
         <p className="eyebrow">Resume</p>
-        <h1 className="section-title mt-4">
-          Resume and contact.
-        </h1>
+        <h1 className="section-title mt-4">Resume and contact.</h1>
         <p className="section-copy mt-4 text-sm md:text-base">
           This section keeps the written profile, contact methods, LaTeX CV, and
           PDF export in one place.

@@ -30,8 +30,8 @@ export const projects: Project[] = [
     description:
       "This portfolio is built as a static-exported Next.js app for GitHub Pages, keeping deployment simple while preserving a clean App Router structure.",
     tech: ["Next.js 14", "TypeScript", "Tailwind CSS v4", "GitHub Pages"],
-    demoUrl: "https://github.com/HieuThu16/HieuThu16",
-    repoUrl: "https://github.com/HieuThu16/HieuThu16",
+    demoUrl: "https://hieuthu16.github.io/Portfolio/",
+    repoUrl: "https://github.com/HieuThu16/Portfolio",
     featured: false,
   },
 ];

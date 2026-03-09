@@ -11,9 +11,7 @@ export default function ProjectsPage() {
     <div className="container-shell py-10 md:py-16">
       <MotionReveal className="section-shell rounded-[2rem] p-6 md:p-8">
         <p className="eyebrow">Projects</p>
-        <h1 className="section-title mt-4">
-          Project library.
-        </h1>
+        <h1 className="section-title mt-4">Project library.</h1>
         <p className="section-copy mt-4 text-sm md:text-base">
           A direct view of public work with concise descriptions, tech stacks,
           and side-by-side access to deploy targets and source repositories.

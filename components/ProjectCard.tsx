@@ -24,12 +24,16 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
           <div className="flex flex-col gap-5">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <CardTitle className="text-foreground">{project.name}</CardTitle>
+                <CardTitle className="text-foreground">
+                  {project.name}
+                </CardTitle>
                 <CardDescription className="mt-3 max-w-md">
                   {project.description}
                 </CardDescription>
               </div>
-              {project.featured ? <Badge variant="accent">Featured</Badge> : null}
+              {project.featured ? (
+                <Badge variant="accent">Featured</Badge>
+              ) : null}
             </div>
 
             <div className="flex flex-wrap gap-3 text-sm">

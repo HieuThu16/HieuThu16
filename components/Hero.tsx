@@ -8,7 +8,9 @@ import { projects } from "@/content/projects";
 import { resumeData } from "@/content/resume";
 
 export function Hero() {
-  const featuredProjects = projects.filter((project) => project.featured).slice(0, 2);
+  const featuredProjects = projects
+    .filter((project) => project.featured)
+    .slice(0, 2);
 
   return (
     <section className="container-shell pt-10 md:pt-16">
@@ -20,9 +22,7 @@ export function Hero() {
             </Badge>
 
             <div className="space-y-4">
-              <p className="eyebrow">
-                Truong Nguyen Minh Hieu
-              </p>
+              <p className="eyebrow">Truong Nguyen Minh Hieu</p>
               <h1 className="text-balance text-5xl font-semibold tracking-[-0.08em] text-foreground md:text-7xl">
                 Clean portfolio.
                 <br />
@@ -72,9 +72,7 @@ export function Hero() {
           <div className="rounded-[1.75rem] border border-border bg-surface-2 p-6 md:p-8">
             <div className="mb-6 flex items-center justify-between gap-4">
               <div>
-                <p className="eyebrow">
-                  Selected Work
-                </p>
+                <p className="eyebrow">Selected Work</p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-[-0.05em] text-foreground">
                   Project and deploy links in one place.
                 </h2>
