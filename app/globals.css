@@ -19,8 +19,8 @@
   --background: #f8fbff;
   --foreground: #0f172a;
   --surface: #ffffff;
-  --surface-2: #eef4ff;
-  --muted: #eff6ff;
+  --surface-2: #f3f7fc;
+  --muted: #edf4ff;
   --muted-foreground: #64748b;
   --border: #dbe6f3;
   --accent: #2563eb;
@@ -40,12 +40,12 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      rgba(37, 99, 235, 0.14),
-      transparent 26%
+      rgba(37, 99, 235, 0.1),
+      transparent 24%
     ),
     radial-gradient(
       circle at top right,
-      rgba(15, 23, 42, 0.05),
+      rgba(15, 23, 42, 0.03),
       transparent 24%
     ),
     linear-gradient(180deg, #ffffff 0%, #f8fbff 42%, #eef4ff 100%);
@@ -72,19 +72,33 @@ a {
 
 .section-shell {
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  box-shadow: 0 20px 80px rgba(37, 99, 235, 0.08);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.05);
 }
 
 .section-title {
   font-size: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
-  line-height: 1;
-  letter-spacing: -0.05em;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
 }
 
 .section-copy {
   max-width: 42rem;
   color: var(--muted-foreground);
+}
+
+.eyebrow {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.panel-soft {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.04);
 }

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github, Mail, MapPin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MotionReveal } from "@/components/MotionReveal";
 import { projects } from "@/content/projects";
+import { resumeData } from "@/content/resume";
 
 export function Hero() {
   const featuredProjects = projects.filter((project) => project.featured).slice(0, 2);
@@ -19,16 +20,33 @@ export function Hero() {
             </Badge>
 
             <div className="space-y-4">
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              <p className="eyebrow">
                 Truong Nguyen Minh Hieu
               </p>
               <h1 className="text-balance text-5xl font-semibold tracking-[-0.08em] text-foreground md:text-7xl">
-                Projects first. Clear links. Clean delivery.
+                Clean portfolio.
+                <br />
+                Practical full-stack work.
               </h1>
               <p className="text-balance max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-                I build practical web products across frontend and backend with
-                React, Next.js, Java, and Spring Boot.
+                I build web products with React, Next.js, Java, and Spring Boot,
+                with an emphasis on usable interfaces, clear structure, and
+                straightforward deployment.
               </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2">
+                <MapPin className="size-4" />
+                {resumeData.location}
+              </span>
+              <a
+                href={`mailto:${resumeData.contact.email}`}
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 transition hover:border-accent/20 hover:text-accent"
+              >
+                <Mail className="size-4" />
+                Contact
+              </a>
             </div>
 
             <div className="flex flex-wrap gap-3">
@@ -54,11 +72,11 @@ export function Hero() {
           <div className="rounded-[1.75rem] border border-border bg-surface-2 p-6 md:p-8">
             <div className="mb-6 flex items-center justify-between gap-4">
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                  Featured Projects
+                <p className="eyebrow">
+                  Selected Work
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-[-0.05em] text-foreground">
-                  Deploy and repository links side by side.
+                  Project and deploy links in one place.
                 </h2>
               </div>
             </div>
@@ -67,16 +85,19 @@ export function Hero() {
               {featuredProjects.map((project) => (
                 <div
                   key={project.name}
-                  className="rounded-2xl border border-border bg-surface px-5 py-5"
+                  className="panel-soft rounded-2xl px-5 py-5"
                 >
                   <div className="flex flex-col gap-4">
-                    <div>
-                      <p className="text-lg font-semibold text-foreground">
-                        {project.name}
-                      </p>
-                      <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                        {project.description}
-                      </p>
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-lg font-semibold text-foreground">
+                          {project.name}
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                          {project.description}
+                        </p>
+                      </div>
+                      <Badge>Featured</Badge>
                     </div>
 
                     <div className="flex flex-wrap gap-3">
@@ -84,7 +105,7 @@ export function Hero() {
                         href={project.demoUrl}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground shadow-[0_10px_24px_rgba(37,99,235,0.24)] transition hover:-translate-y-0.5"
+                        className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition hover:-translate-y-0.5"
                       >
                         Deploy
                         <ExternalLink className="size-4" />

@@ -18,6 +18,9 @@ type ResumeSectionProps = {
 export function ResumeSection({ data, compact = false }: ResumeSectionProps) {
   const visibleProjects = compact ? data.projects.slice(0, 1) : data.projects;
   const hasEmail = Boolean(data.contact.email);
+  const visibleExperience = compact
+    ? data.experience.slice(0, 1)
+    : data.experience;
 
   return (
     <MotionReveal>
@@ -25,9 +28,7 @@ export function ResumeSection({ data, compact = false }: ResumeSectionProps) {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-6">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                Resume
-              </p>
+              <p className="eyebrow">Resume</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.06em] md:text-4xl">
                 {data.name}
               </h2>
@@ -82,9 +83,7 @@ export function ResumeSection({ data, compact = false }: ResumeSectionProps) {
           <div className="rounded-[1.75rem] border border-border bg-surface-2 p-5 md:p-6">
             <div className="space-y-5">
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                  Skills
-                </p>
+                <p className="eyebrow">Skills</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {data.skills.map((skill) => (
                     <Badge key={skill}>{skill}</Badge>
@@ -95,16 +94,26 @@ export function ResumeSection({ data, compact = false }: ResumeSectionProps) {
               <Separator />
 
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                  Highlights
-                </p>
+                <p className="eyebrow">Experience</p>
                 <div className="mt-4 space-y-3">
-                  {data.highlights.map((item) => (
+                  {visibleExperience.map((item) => (
                     <div
-                      key={item}
-                      className="rounded-2xl border border-border bg-surface px-4 py-3 text-sm leading-6 text-muted-foreground"
+                      key={item.title}
+                      className="panel-soft rounded-2xl px-4 py-4"
                     >
-                      {item}
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </p>
+                          <p className="mt-1 text-sm text-muted-foreground">
+                            {item.subtitle}
+                          </p>
+                        </div>
+                        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                          {item.period}
+                        </span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -113,14 +122,12 @@ export function ResumeSection({ data, compact = false }: ResumeSectionProps) {
               <Separator />
 
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                  Selected Work
-                </p>
+                <p className="eyebrow">Selected Work</p>
                 <div className="mt-4 space-y-4">
                   {visibleProjects.map((project) => (
                     <div
                       key={project.title}
-                      className="rounded-2xl border border-border bg-surface px-4 py-4"
+                      className="panel-soft rounded-2xl px-4 py-4"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>

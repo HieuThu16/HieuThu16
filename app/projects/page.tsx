@@ -10,16 +10,13 @@ export default function ProjectsPage() {
   return (
     <div className="container-shell py-10 md:py-16">
       <MotionReveal className="section-shell rounded-[2rem] p-6 md:p-8">
-        <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-          Projects
-        </p>
+        <p className="eyebrow">Projects</p>
         <h1 className="section-title mt-4">
-          Work that balances product clarity and implementation discipline.
+          Project library.
         </h1>
         <p className="section-copy mt-4 text-sm md:text-base">
-          The current selection leans toward media and reading products, with
-          attention on navigation, content density, and simple deployment
-          workflows.
+          A direct view of public work with concise descriptions, tech stacks,
+          and side-by-side access to deploy targets and source repositories.
         </p>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">

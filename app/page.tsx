@@ -10,11 +10,23 @@ import { Button } from "@/components/ui/button";
 import { projects } from "@/content/projects";
 import { resumeData } from "@/content/resume";
 
-const aboutLines = [
-  "Frontend work with React and Next.js.",
-  "Backend learning with Java and Spring Boot.",
-  "Public demos that can be opened immediately.",
-  "Repository and deploy links visible without digging.",
+const profileBlocks = [
+  {
+    title: "Frontend",
+    body: "React and Next.js for product-facing interfaces, routing, and responsive UI work.",
+  },
+  {
+    title: "Backend",
+    body: "Java and Spring Boot for API structure, service layers, and broader full-stack practice.",
+  },
+  {
+    title: "Workflow",
+    body: "GitHub, static deployment, and project publishing with clear access to both code and demos.",
+  },
+  {
+    title: "Focus",
+    body: "Professional presentation, practical delivery, and projects that can be evaluated quickly.",
+  },
 ];
 
 export default function HomePage() {
@@ -26,12 +38,14 @@ export default function HomePage() {
 
       <section className="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <MotionReveal className="section-shell rounded-[2rem] p-6 md:p-8">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-            About
-          </p>
+          <p className="eyebrow">About</p>
           <h2 className="section-title mt-4">
-            Short intro. Real projects.
+            Professional overview.
           </h2>
+          <p className="section-copy mt-4 text-sm md:text-base">
+            A compact summary of what I build, how I work, and what someone can
+            verify immediately from this portfolio.
+          </p>
         </MotionReveal>
 
         <MotionReveal
@@ -39,12 +53,15 @@ export default function HomePage() {
           delay={0.08}
         >
           <div className="grid gap-4 md:grid-cols-2">
-            {aboutLines.map((line) => (
+            {profileBlocks.map((item) => (
               <div
-                key={line}
-                className="rounded-[1.5rem] border border-border bg-surface px-5 py-5 text-sm leading-7 text-muted-foreground"
+                key={item.title}
+                className="panel-soft rounded-[1.5rem] px-5 py-5"
               >
-                {line}
+                <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  {item.body}
+                </p>
               </div>
             ))}
           </div>
@@ -55,15 +72,14 @@ export default function HomePage() {
         <MotionReveal>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                Skills
-              </p>
+              <p className="eyebrow">Skills</p>
               <h2 className="section-title mt-4">
-                Stack I actually use.
+                Core stack.
               </h2>
             </div>
             <p className="section-copy text-sm md:text-base">
-              Clean list, direct links, and no filler blocks.
+              Focused on the tools that show up repeatedly in shipped work and
+              ongoing backend practice.
             </p>
           </div>
 
@@ -85,12 +101,14 @@ export default function HomePage() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <MotionReveal>
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                Projects
-              </p>
+              <p className="eyebrow">Projects</p>
               <h2 className="section-title mt-4">
-                Projects with deploy links first.
+                Published work.
               </h2>
+              <p className="section-copy mt-4 text-sm md:text-base">
+                Each project card keeps the deploy link and repository visible so
+                the work can be reviewed without extra navigation.
+              </p>
             </div>
           </MotionReveal>
 
