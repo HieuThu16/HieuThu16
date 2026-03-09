@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Fira_Code, Inter } from "next/font/google";
+import { Be_Vietnam_Pro, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
+const beVietnamPro = Be_Vietnam_Pro({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-geist-sans",
 });
 
-const firaCode = Fira_Code({
-  subsets: ["latin", "latin-ext"],
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin", "vietnamese"],
   variable: "--font-geist-mono",
 });
 
@@ -34,23 +35,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${firaCode.variable} antialiased`}>
+      <body
+        className={`${beVietnamPro.variable} ${jetBrainsMono.variable} antialiased`}
+      >
         <div className="relative overflow-hidden">
-          <header className="sticky top-0 z-50 border-b border-border/80 bg-white/80 backdrop-blur-xl">
+          <header className="sticky top-0 z-50 border-b border-border/80 bg-white/90 backdrop-blur-xl">
             <div className="container-shell flex items-center justify-between py-4">
               <Link
                 href="/"
-                className="text-sm font-semibold tracking-[0.24em] uppercase"
+                className="text-sm font-semibold tracking-[0.24em] uppercase text-accent"
               >
                 TMH
               </Link>
 
-              <nav className="flex items-center gap-2 rounded-full border border-border bg-surface/80 p-1 text-sm text-muted-foreground">
+              <nav className="flex items-center gap-2 rounded-full border border-border bg-surface/90 p-1 text-sm text-muted-foreground shadow-[0_10px_30px_rgba(37,99,235,0.08)]">
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-full px-4 py-2 transition hover:bg-surface-2 hover:text-foreground"
+                    className="rounded-full px-4 py-2 transition hover:bg-[rgba(37,99,235,0.08)] hover:text-accent"
                   >
                     {item.label}
                   </Link>

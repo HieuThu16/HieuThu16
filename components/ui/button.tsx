@@ -9,11 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-accent px-5 py-3 text-accent-foreground hover:opacity-92",
+        default:
+          "bg-accent px-5 py-3 text-accent-foreground shadow-[0_12px_28px_rgba(37,99,235,0.28)] hover:-translate-y-0.5 hover:opacity-95",
         secondary:
-          "border border-border bg-surface px-5 py-3 text-foreground hover:bg-surface-2",
+          "border border-border bg-surface px-5 py-3 text-foreground hover:border-accent/25 hover:bg-[rgba(37,99,235,0.06)] hover:text-accent",
         ghost:
-          "px-3 py-2 text-muted-foreground hover:bg-surface-2 hover:text-foreground",
+          "px-3 py-2 text-muted-foreground hover:bg-[rgba(37,99,235,0.08)] hover:text-accent",
       },
       size: {
         default: "h-11",

@@ -11,10 +11,10 @@ import { projects } from "@/content/projects";
 import { resumeData } from "@/content/resume";
 
 const aboutLines = [
-  "I like products that feel quick to understand and easy to keep using.",
-  "Most of my work starts on the frontend, then grows into full-stack structure when the product needs it.",
-  "I learn by shipping: public demos, study repos, backend experiments, and small iterations.",
-  "Minimal for me means fewer distractions, stronger hierarchy, and clearer decisions.",
+  "Frontend work with React and Next.js.",
+  "Backend learning with Java and Spring Boot.",
+  "Public demos that can be opened immediately.",
+  "Repository and deploy links visible without digging.",
 ];
 
 export default function HomePage() {
@@ -30,7 +30,7 @@ export default function HomePage() {
             About
           </p>
           <h2 className="section-title mt-4">
-            Minimal by default. Product-minded by habit.
+            Short intro. Real projects.
           </h2>
         </MotionReveal>
 
@@ -59,12 +59,11 @@ export default function HomePage() {
                 Skills
               </p>
               <h2 className="section-title mt-4">
-                Tools I reach for when the work needs to ship.
+                Stack I actually use.
               </h2>
             </div>
             <p className="section-copy text-sm md:text-base">
-              No proficiency bars, no decoration-heavy charts. Just the stack I
-              actually want to build with.
+              Clean list, direct links, and no filler blocks.
             </p>
           </div>
 
@@ -90,7 +89,7 @@ export default function HomePage() {
                 Projects
               </p>
               <h2 className="section-title mt-4">
-                Selected builds with real interface decisions.
+                Projects with deploy links first.
               </h2>
             </div>
           </MotionReveal>

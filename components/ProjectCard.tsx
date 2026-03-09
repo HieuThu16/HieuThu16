@@ -19,11 +19,11 @@ type ProjectCardProps = {
 export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
   return (
     <MotionReveal delay={delay}>
-      <Card className="h-full transition-transform duration-300 hover:-translate-y-1">
+      <Card className="h-full border-border/90 transition-transform duration-300 hover:-translate-y-1">
         <CardHeader>
           <div className="flex items-start justify-between gap-4">
             <div>
-              <CardTitle>{project.name}</CardTitle>
+              <CardTitle className="text-foreground">{project.name}</CardTitle>
               <CardDescription className="mt-3 max-w-md">
                 {project.description}
               </CardDescription>
@@ -43,9 +43,9 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
               href={project.demoUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-foreground transition hover:bg-surface-2"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-medium text-accent-foreground shadow-[0_10px_24px_rgba(37,99,235,0.24)] transition hover:-translate-y-0.5"
             >
-              Live Demo
+              Deploy
               <ArrowUpRight className="size-4" />
             </a>
             {project.repoUrl ? (
@@ -53,7 +53,7 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-muted-foreground transition hover:bg-surface-2 hover:text-foreground"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-foreground transition hover:border-accent/25 hover:bg-[rgba(37,99,235,0.06)] hover:text-accent"
               >
                 Repository
                 <Github className="size-4" />
